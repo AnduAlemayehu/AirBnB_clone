@@ -1,4 +1,8 @@
-irBnB clone - The console
+#!/usr/bin/python3
+
+"""
+
+0x00. AirBnB clone - The console
 
 Base_model module
 

@@ -134,10 +134,7 @@ class FileStorage:
 
                 # FileStorage.__objects[key] = BaseModel(**obj_dict)
 
-                FileStorage.__objects[key] = FileStorage\
-
-                           .className[key.split('.')[0]](**obj_dict)
-
+                FileStorage.__objects[key] = FileStorage.className[key.split('.')[0]](**obj_dict)
         except FileNotFoundError:
 
             pass

@@ -1,5 +1,8 @@
-ole.py module
+#!/usr/bin/python3
 
+"""
+
+console.py module
 """
 
 import cmd
@@ -31,9 +34,6 @@ from models.amenity import Amenity
 from models.place import Place
 
 from models.review import Review
-
-
-
 
 
 class HBNBCommand(cmd.Cmd):
@@ -122,9 +122,7 @@ class HBNBCommand(cmd.Cmd):
 
             print("** instance id missing **")
 
-        elif args[0]+'.'+args[1] not in models.storage\
-
-                                              ._FileStorage__objects.keys():
+        elif args[0]+'.'+args[1] not in models.storage._FileStorage__objects.keys():
 
             print("** no instance found **")
 
@@ -164,9 +162,7 @@ class HBNBCommand(cmd.Cmd):
 
             print("** instance id missing **")
 
-        elif args[0]+'.'+args[1] not in models.storage\
-
-                                              ._FileStorage__objects.keys():
+        elif args[0]+'.'+args[1] not in models.storage._FileStorage__objects.keys():
 
             print("** no instance found **")
 
@@ -282,9 +278,7 @@ class HBNBCommand(cmd.Cmd):
 
                     self.do_update(arg0+' '+arg1)
 
-                elif ', ' in args[1] and\
-
-                     '{' in args[1] and ':' in args[1]:
+                elif ', ' in args[1] and '{' in args[1] and ':' in args[1]:
 
                     arg1 = args[1].split('(')[1].strip(')').split(', ', 1)[0]
 
@@ -302,9 +296,7 @@ class HBNBCommand(cmd.Cmd):
 
                         self.do_update(arg0+' '+arg1+' '+key+' '+str(value))
 
-                elif ', ' in args[1] and\
-
-                     len(args[1].split('(')[1].strip(')').split(', ')) == 2:
+                elif ', ' in args[1] and len(args[1].split('(')[1].strip(')').split(', ')) == 2:
 
                     arg1 = args[1].split('(')[1].strip(')').split(', ')[0]
 
@@ -312,9 +304,7 @@ class HBNBCommand(cmd.Cmd):
 
                     self.do_update(arg0+' '+arg1+' '+arg2)
 
-                elif ', ' in args[1] and\
-
-                     len(args[1].split('(')[1].strip(')').split(', ')) >= 3:
+                elif ', ' in args[1] and len(args[1].split('(')[1].strip(')').split(', ')) >= 3:
 
                     print(args[1])
 
@@ -410,10 +400,7 @@ class HBNBCommand(cmd.Cmd):
 
             print("** instance id missing **")
 
-        elif args[0]+'.'+args[1] not in models.storage\
-
-                                              ._FileStorage__objects.keys():
-
+        elif args[0]+'.'+args[1] not in models.storage._FileStorage__objects.keys():
             print("** no instance found **")
 
         elif len(args) == 2:
