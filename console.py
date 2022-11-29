@@ -1,8 +1,4 @@
-#!/usr/bin/python3
-
-"""
-
-console.py module
+ole.py module
 
 """
 
@@ -40,7 +36,7 @@ from models.review import Review
 
 
 
-class AirBNBCommand(cmd.Cmd):
+class HBNBCommand(cmd.Cmd):
 
     """
 
@@ -84,15 +80,15 @@ class AirBNBCommand(cmd.Cmd):
 
             print("** class name missing **")
 
-        elif arg not in AirBNBCommand.className.keys():
+        elif arg not in HBNBCommand.className.keys():
 
             print("** class doesn't exist **")
 
         else:
 
-            obj = AirBNBCommand.className[arg]()
+            obj = HBNBCommand.className[arg]()
 
-            AirBNBCommand.className[arg].save(obj)
+            HBNBCommand.className[arg].save(obj)
 
             print(obj.id)
 
@@ -118,7 +114,7 @@ class AirBNBCommand(cmd.Cmd):
 
         args = shlex.split(arg)
 
-        if args[0] not in AirBNBCommand.className.keys():
+        if args[0] not in HBNBCommand.className.keys():
 
             print("** class doesn't exist **")
 
@@ -160,7 +156,7 @@ class AirBNBCommand(cmd.Cmd):
 
         args = shlex.split(arg)
 
-        if args[0] not in AirBNBCommand.className.keys():
+        if args[0] not in HBNBCommand.className.keys():
 
             print("** class doesn't exist **")
 
@@ -208,7 +204,7 @@ class AirBNBCommand(cmd.Cmd):
 
         else:
 
-            if arg not in AirBNBCommand.className.keys():
+            if arg not in HBNBCommand.className.keys():
 
                 print("** class doesn't exist **")
 
@@ -258,7 +254,7 @@ class AirBNBCommand(cmd.Cmd):
 
         # print("default: {}".format(args))
 
-        if args[0] in AirBNBCommand.className.keys():
+        if args[0] in HBNBCommand.className.keys():
 
             if args[1].strip('()') == 'all':
 
@@ -364,7 +360,7 @@ class AirBNBCommand(cmd.Cmd):
 
             print("** class name missing **")
 
-        elif arg not in AirBNBCommand.className.keys():
+        elif arg not in HBNBCommand.className.keys():
 
             print("** class doesn't exist **")
 
@@ -406,7 +402,7 @@ class AirBNBCommand(cmd.Cmd):
 
         # print("do_update: {}".format(args))
 
-        if args[0] not in AirBNBCommand.className.keys():
+        if args[0] not in HBNBCommand.className.keys():
 
             print("** class doesn't exist **")
 
@@ -468,7 +464,7 @@ class AirBNBCommand(cmd.Cmd):
 
                 setattr(obj, args[2], args[3])
 
-            AirBNBCommand.className[args[0]].save(obj)
+            HBNBCommand.className[args[0]].save(obj)
 
 
 
@@ -532,4 +528,4 @@ class AirBNBCommand(cmd.Cmd):
 
 if __name__ == '__main__':
 
-    AirBNBCommand().cmdloop()
+    HBNBCommand().cmdloop()
